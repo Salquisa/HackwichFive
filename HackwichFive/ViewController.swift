@@ -13,11 +13,15 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //Define an array variable using an array literal with 5 items of type string
     
+    @IBOutlet var tableView: UITableView!
     var studentsArray = ["Clark", "Jaquawn", "Scott", "David", "Michael"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //set VC as deglate
+        //self.tableView.dataSource = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,4 +42,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
             
             
+}
 }
