@@ -14,33 +14,48 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //Define an array variable using an array literal with 5 items of type string
     
     @IBOutlet var tableView: UITableView!
-    var studentsArray = ["Clark", "Jaquawn", "Scott", "David", "Michael"]
+    var restaurantArray = ["California Pizza Kitchen", "Pieology", "Chilis", "AppleBee", "Johnny Rocket"]
+    
+    //Hackwich Seven Part 6 Step 2
+    //Restaurant Image Data
+    var restaurantImageData = [String]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //set VC as deglate
-        //self.tableView.dataSource = self
+        tableView.dataSource = self
         
+        
+        //Hackwich Seven, part 6
+        let path = Bundle.main.path(forResource: "Property List", ofType: "plist")
+        let dict = NSDictionary(contentsOfFile: path!)
+        
+        restaurantImageData = dict!.object(forKey: "restaurantImages") as! [String]
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return studentsArray.count
+        return restaurantArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
         UITableViewCell {
         //set up cell to display items in studentArray
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier")!
-        let text = studentsArray[indexPath.row]
+            
+        let text = restaurantArray[indexPath.row]
+            
         cell.textLabel?.text = text
+            
         return cell
-            
-            
 }
+    //Hackwich Seven, part 7
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+    }
 }

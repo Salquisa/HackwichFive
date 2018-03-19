@@ -49,5 +49,29 @@
             </objects>
             <point key="canvasLocation" x="-99.375" y="117.25352112676056"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="YTq-XR-qMi">
+            <objects>
+                <viewController id="uAJ-SI-or4" customClass="detailViewController" customModule="HackwichFive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2H2-pl-JRz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FNj-pQ-pVd">
+                                <rect key="frame" x="16" y="39" width="288" height="178"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="rIp-oe-OFC"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="FNj-pQ-pVd" id="h2N-P5-e9j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6wD-7T-rqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="562.5" y="115.14084507042254"/>
+        </scene>
     </scenes>
 </document>
